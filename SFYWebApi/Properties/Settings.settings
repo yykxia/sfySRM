@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SFYWebApi.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SFYWebApi_net_sogal_www_WebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://mlily.sogal.net:801/EShop/WebService.asmx</Value>
+    </Setting>
+    <Setting Name="SFYWebApi_wdgjWebService_wdgjWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://112.124.48.116:30000/wdexpand/wdgjWebService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

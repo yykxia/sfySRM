@@ -1,0 +1,11 @@
+.login { height:100%;}
+.login .cssTitle h1 { font-size:14px; font-weight:normal; color:#333;}
+.login .cssMain { font-size:12px; padding:8px 5px;}
+.login .cssLine { border-right:1px #cccccc solid;}
+.login .cssLabel { text-align:right; padding-top:13px; width:80px;}
+.login .cssInput { text-align:left;}
+.login .cssInput input {width:140px; border:1px #ccc solid; padding:2px;}
+.login .cssHelp { line-height:22px;}
+.login .cssHelp a { color:#0088dd; text-decoration:none;}
+.login .cssVerson { display:block; font-size:12px; font-family:Verdana Arial; padding-right:20px;}
+.login .cssCheckbox { margin-left:0px; text-indent:-4px; letter-spacing:0.03em;}

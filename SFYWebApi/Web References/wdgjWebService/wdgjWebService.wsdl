@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetCustOrders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustOrdersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wdgj_AddressMap">
+        <s:complexType />
+      </s:element>
+      <s:element name="wdgj_AddressMapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wdgj_AddressMapResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCustOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustOrders" />
+  </wsdl:message>
+  <wsdl:message name="GetCustOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="wdgj_AddressMapSoapIn">
+    <wsdl:part name="parameters" element="tns:wdgj_AddressMap" />
+  </wsdl:message>
+  <wsdl:message name="wdgj_AddressMapSoapOut">
+    <wsdl:part name="parameters" element="tns:wdgj_AddressMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustOrdersHttpGetIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCustOrdersHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="wdgj_AddressMapHttpGetIn" />
+  <wsdl:message name="wdgj_AddressMapHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetCustOrdersHttpPostIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCustOrdersHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="wdgj_AddressMapHttpPostIn" />
+  <wsdl:message name="wdgj_AddressMapHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:portType name="wdgjWebServiceSoap">
+    <wsdl:operation name="GetCustOrders">
+      <wsdl:input message="tns:GetCustOrdersSoapIn" />
+      <wsdl:output message="tns:GetCustOrdersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wdgj_AddressMap">
+      <wsdl:input message="tns:wdgj_AddressMapSoapIn" />
+      <wsdl:output message="tns:wdgj_AddressMapSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="wdgjWebServiceHttpGet">
+    <wsdl:operation name="GetCustOrders">
+      <wsdl:input message="tns:GetCustOrdersHttpGetIn" />
+      <wsdl:output message="tns:GetCustOrdersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wdgj_AddressMap">
+      <wsdl:input message="tns:wdgj_AddressMapHttpGetIn" />
+      <wsdl:output message="tns:wdgj_AddressMapHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="wdgjWebServiceHttpPost">
+    <wsdl:operation name="GetCustOrders">
+      <wsdl:input message="tns:GetCustOrdersHttpPostIn" />
+      <wsdl:output message="tns:GetCustOrdersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wdgj_AddressMap">
+      <wsdl:input message="tns:wdgj_AddressMapHttpPostIn" />
+      <wsdl:output message="tns:wdgj_AddressMapHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wdgjWebServiceSoap" type="tns:wdgjWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCustOrders">
+      <soap:operation soapAction="http://tempuri.org/GetCustOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wdgj_AddressMap">
+      <soap:operation soapAction="http://tempuri.org/wdgj_AddressMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wdgjWebServiceSoap12" type="tns:wdgjWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCustOrders">
+      <soap12:operation soapAction="http://tempuri.org/GetCustOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wdgj_AddressMap">
+      <soap12:operation soapAction="http://tempuri.org/wdgj_AddressMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wdgjWebServiceHttpGet" type="tns:wdgjWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetCustOrders">
+      <http:operation location="/GetCustOrders" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wdgj_AddressMap">
+      <http:operation location="/wdgj_AddressMap" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wdgjWebServiceHttpPost" type="tns:wdgjWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetCustOrders">
+      <http:operation location="/GetCustOrders" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wdgj_AddressMap">
+      <http:operation location="/wdgj_AddressMap" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wdgjWebService">
+    <wsdl:port name="wdgjWebServiceSoap" binding="tns:wdgjWebServiceSoap">
+      <soap:address location="http://112.124.48.116:30000/wdexpand/wdgjWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wdgjWebServiceSoap12" binding="tns:wdgjWebServiceSoap12">
+      <soap12:address location="http://112.124.48.116:30000/wdexpand/wdgjWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wdgjWebServiceHttpGet" binding="tns:wdgjWebServiceHttpGet">
+      <http:address location="http://112.124.48.116:30000/wdexpand/wdgjWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wdgjWebServiceHttpPost" binding="tns:wdgjWebServiceHttpPost">
+      <http:address location="http://112.124.48.116:30000/wdexpand/wdgjWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

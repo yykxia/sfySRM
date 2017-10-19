@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://eshopinf.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://eshopinf.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://eshopinf.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPoRequisition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="creationDayFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="creationDayTo" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPoRequisitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPoRequisitionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHQPoRequisition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dayFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayTo" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHQPoRequisitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHQPoRequisitionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJJTPoRequisition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dayFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayTo" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJJTPoRequisitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJJTPoRequisitionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPoRequisition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="headerId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lineId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="logInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPoRequisitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPoRequisitionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPoKinetic">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPoKineticResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPoKineticResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePoKinetic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lineId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePoKineticResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePoKineticResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPoRequisitionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPoRequisition" />
+  </wsdl:message>
+  <wsdl:message name="GetPoRequisitionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPoRequisitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHQPoRequisitionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHQPoRequisition" />
+  </wsdl:message>
+  <wsdl:message name="GetHQPoRequisitionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHQPoRequisitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJJTPoRequisitionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJJTPoRequisition" />
+  </wsdl:message>
+  <wsdl:message name="GetJJTPoRequisitionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJJTPoRequisitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPoRequisitionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPoRequisition" />
+  </wsdl:message>
+  <wsdl:message name="AddPoRequisitionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPoRequisitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPoKineticSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPoKinetic" />
+  </wsdl:message>
+  <wsdl:message name="GetPoKineticSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPoKineticResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePoKineticSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePoKinetic" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePoKineticSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePoKineticResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPoRequisition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取网店采购单接口, creationDayFrom-下单日期开始，creationDayFrom-下单日期结束</wsdl:documentation>
+      <wsdl:input message="tns:GetPoRequisitionSoapIn" />
+      <wsdl:output message="tns:GetPoRequisitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHQPoRequisition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取虹桥系统采购单接口, dayFrom-下单日期开始，dayTo-下单日期结束</wsdl:documentation>
+      <wsdl:input message="tns:GetHQPoRequisitionSoapIn" />
+      <wsdl:output message="tns:GetHQPoRequisitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJJTPoRequisition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取家居通系统采购单接口, dayFrom-下单日期开始，dayTo-下单日期结束</wsdl:documentation>
+      <wsdl:input message="tns:GetJJTPoRequisitionSoapIn" />
+      <wsdl:output message="tns:GetJJTPoRequisitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPoRequisition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">回传网店采购单信息接口, headerId-采购申请头ID，lineId-采购申请行ID，quantity-发货数量，logInfo-物流信息</wsdl:documentation>
+      <wsdl:input message="tns:AddPoRequisitionSoapIn" />
+      <wsdl:output message="tns:AddPoRequisitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPoKinetic">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取康耐登物流信息接口</wsdl:documentation>
+      <wsdl:input message="tns:GetPoKineticSoapIn" />
+      <wsdl:output message="tns:GetPoKineticSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePoKinetic">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">回传康耐登物流信息接口, lineId-采购单行ID，comments-备注信息</wsdl:documentation>
+      <wsdl:input message="tns:UpdatePoKineticSoapIn" />
+      <wsdl:output message="tns:UpdatePoKineticSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://eshopinf.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoRequisition">
+      <soap:operation soapAction="http://eshopinf.org/GetPoRequisition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHQPoRequisition">
+      <soap:operation soapAction="http://eshopinf.org/GetHQPoRequisition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJJTPoRequisition">
+      <soap:operation soapAction="http://eshopinf.org/GetJJTPoRequisition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPoRequisition">
+      <soap:operation soapAction="http://eshopinf.org/AddPoRequisition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoKinetic">
+      <soap:operation soapAction="http://eshopinf.org/GetPoKinetic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePoKinetic">
+      <soap:operation soapAction="http://eshopinf.org/UpdatePoKinetic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://eshopinf.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoRequisition">
+      <soap12:operation soapAction="http://eshopinf.org/GetPoRequisition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHQPoRequisition">
+      <soap12:operation soapAction="http://eshopinf.org/GetHQPoRequisition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJJTPoRequisition">
+      <soap12:operation soapAction="http://eshopinf.org/GetJJTPoRequisition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPoRequisition">
+      <soap12:operation soapAction="http://eshopinf.org/AddPoRequisition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoKinetic">
+      <soap12:operation soapAction="http://eshopinf.org/GetPoKinetic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePoKinetic">
+      <soap12:operation soapAction="http://eshopinf.org/UpdatePoKinetic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://mlily.sogal.net:801/EShop/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://mlily.sogal.net:801/EShop/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

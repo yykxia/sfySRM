@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://112.124.48.116:30000/wdexpand/wdgjWebService.asmx?disco" filename="wdgjWebService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://112.124.48.116:30000/wdexpand/wdgjWebService.asmx?wsdl" filename="wdgjWebService.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

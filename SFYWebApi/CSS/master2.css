@@ -1,0 +1,14 @@
+html,body { padding:0px; margin:0px; color:#000; background:url(../images/wave3header.jpg) repeat-x top; background-color:White; background-position:0px 0px; overflow:auto; height:100%;}
+
+* { font-family:Verdana Arial;}
+
+ul { padding:0px; margin:0px;}
+
+.cssBtn { background:url(../images/utbkgnd.gif) repeat-x; border:1px #4a95c9 solid; background-position:left center; font-size:12px; padding:3px 5px 0px 5px;}
+
+.mTop20 { margin-top:20px;} 
+
+.grid th { border-bottom:2px #eee solid; line-height:30px; padding:0px 5px; font-weight:bold; text-align:left;}
+.grid td { border-bottom:1px #eee solid; line-height:30px; padding:0px 5px;}
+
+
